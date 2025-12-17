@@ -1,0 +1,63 @@
+Installation Instructions
+*************************
+
+Copyright (C) 2022 Matteo Mezzadri.
+
+    Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without warranty of any kind.
+
+Dependencies
+============
+
+    To be able to build and install properly QDOS you will need a GCC and GSL
+properly installed on your system. Whilst for the first one is simply a
+limitation of the makefile, and it can be corrected with small adjustement
+enabling anyone to build QDOS with any C compiler the second requirement is
+strict. QDOS has been developed with GSL 2.7.1 and I think that any version
+including the ambient odev2 is compatible with it. The current stable version of
+GSL is always available from ftp.gnu.org in the directory /pub/gnu/gsl. A list
+of mirror sites can be found at http://www.gnu.org/order/ftp.html. The project
+homepage is http://www.gnu.org/software/gsl/
+
+Installation
+============
+
+    Once you have installed GSL, to compile and install QDOS you simply need to
+perform the following step
+
+    1. 'cd' to the directory containing the package's source code
+
+    2. Type 'make' to compile the package
+
+    3. Type `make install' to install the programs and any data files and
+       documentation.  When installing into a prefix owned by root, it is
+       recommended that the package be configured and built as a regular
+       user, and only the `make install' phase executed with root
+       privileges, i.e., do step 2. without root privileges while step 3. with
+       root privileges.
+
+    4. You can remove the program binaries and object files from the
+       source code directory by typing `make clean'.
+
+    5. You can also type `make uninstall' to remove the installed files. If you
+       followed the instruction on the privileges of point 3. then you don't
+       root privileges to perform a make clean while you need them while
+       performing a make uninstall.
+
+Custom Logic Recompilation
+==========================
+
+    If you have build your custom logic and you want to be able to exegute it
+inside a QDOS circuit, the simplest way to make it avaible is to re-build and
+re-install the code. So you need to only perform an ordinary installation.
+Uninstallation of the sfotware and documentations is not needed before a
+re-installation. Summing up do step 1. 2. and 3. of the paragraph before to have
+at your disposal all the Custom Logic defined.
+
+Installation Names
+==================
+
+   By default, `make install' installs the programs under `/usr/local/bin' and
+the manual page under '/usr/share/man/man1'.

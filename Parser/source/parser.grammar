@@ -1,0 +1,39 @@
+File contenente la grammatica priva di semantica del parser
+
+list:       /* Nothing */
+        |   list ';'
+        |   list def ';'
+        |   list error ';'
+        ;
+
+def:        QUDIT '[' INTEGER ']' '=' '{' integer_sequence '}'
+        |   GATE '[' INTEGER ']' '=' INDEX
+        |   NAME '=' '{' inst_sequence '}'
+        |   NAME '=' INTEGER
+        |   NAME '=' FLOAT
+        ;
+
+inst:       GATE '[' integer_sequence ']' '('float_sequence')' ';'
+        |   GATE '[' integer_sequence ']' ';'
+        |   MEASUREMENT '[' integer_sequence ']' ';'
+        |   CUSTOM_LOGIC NAME ';'
+        |   NAME ';'
+        ;
+
+inst_sequence:          inst
+                    |   inst_sequence inst
+                    ;
+
+integer_sequence:       /* Nothing */
+                    |   INTEGER
+                    |   integer_sequence ',' INTEGER
+                    ;
+
+float_sequence:         /* Nothing (N c Q)*/
+                    |   VAR
+                    |   FLOAT
+                    |   INTEGER
+                    |   float_sequence ',' VAR
+                    |   float_sequence ',' FLOAT
+                    |   float_sequence ',' INTEGER
+                    ;

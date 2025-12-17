@@ -1,0 +1,2 @@
+cp qdosman /usr/share/man/man1/qdos.1
+gzip /usr/share/man/man1/qdos.1

@@ -1,0 +1,51 @@
+QDOS - simulator of QuDits OperationS
+=====================================
+
+QDOS is free software, you can redistribute it and/or modify it under
+the terms of the GNU General Public License.
+
+The GNU General Public License does not permit this software to be
+redistributed in proprietary programs.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Availability
+============
+Soon or later I will set up a mirror for the download of the software.
+
+Installation
+============
+
+    Please consult the INSTALL file in this distribution for more detailed
+instructions.
+
+Reporting Bugs
+==============
+
+A list of known bugs can be found in the BUGS file.  Details of
+compilation problems can be found in the INSTALL file.
+
+If you find a bug which is not listed in these files please report it
+to matteo.mezzadri3@studenti.unipr.it
+
+All bug reports should include:
+
+       The version number of GSL, and where you obtained it.
+       The hardware and operating system
+       The compiler used, including version number and compilation options
+       A description of the bug behaviour
+       A short program which reproducibly exercises the bug
+
+It is useful if you can check whether the same problem occurs when the
+program is compiled without optimization.  Thank you.
+
+Any errors or omissions in the manual can also be reported to the
+same address.
+
+Contributing to GSL
+===================
+
+If you are interested in participating in QDOS development, please contact me
+at matteo.mezzadri3@studenti.unipr.it

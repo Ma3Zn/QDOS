@@ -1,0 +1,90 @@
+.\" Manpage for QDOS.
+.\" Contact matteo.mezzadr3@studenti.unipr.it to correct errors or typos.
+
+.TH QDOS 1 "11 September 2022" "1.0.0" "QDOS man page"
+
+.SH NAME
+QDOS \- simulator of generic QuDits OperationS
+
+.SH SYNOPSIS
+qdos [options] infile
+
+.SH DESCRIPTION
+.B QDOS
+is a simulator of controlled physical systems.
+It finds its origin in the need to study the properties of different possible physical platforms for the realization of qudits.
+Moreover, to be able to fully study such qualities we need to take into account the presence of errors.
+.B QDOS
+take care also of this simulating arbitrary error sources trough approximations given by the Lindblad Equation.
+
+It takes as input a quantum circuit written in the
+.B QDOS
+programming language.
+Such language has been developed specificaly for the simulator (hence the same name).
+Such language have been developed with complete focus to the simplicity of implementations of quantum error correction schemes.
+
+Here we will discuss in details only the options accepted by the program.
+For a full description of the program and of the
+.B QDOS
+language one should refer to the documentations included with the software.
+In particular Chapter 1 and 2 of my Master's Thesis.
+
+.SH OPTIONS
+.\"TODO::	COMPLETARE LE INFO PER ALCUNE OPZIONI SPECIFICANDO COSA VOGLIONO DIREI TUTTI I POSSIBILI VALORI CHE POSSONO ESSERE DATI AD UNA OPZIONE
+.IP --connection_enabled={true|false}
+Enable connections among qudit to resolve levels.
+
+.IP --dephasing_enabled={true|false}
+Enable the simulation of pure dephasing errors.
+
+.IP --frequency_output={integer}
+Sets the number of times the density matrix will be printed when simulating a pulse.
+
+.IP --help
+Display this Information.
+
+.IP --in_dir={string}
+Set the directory for input files.
+
+.IP --measurement_error={double}
+Set the probability of errors in a measurement of a qudit.
+
+.IP --measure_memory={integer}
+Set the number of measurement to save.
+
+.IP --n_shots={integer}
+Set the number of complete measurements to be performed at the end of the simulation.
+
+.IP --out_dir={string}
+Set the directory for the output files.
+
+.IP --out_rho_final={false|bin|dec}
+Set the format of the final density matrix to be printed.
+
+.IP --out_rho_simulation={false|bin|dec}
+Set the format of the intermediate density matrix to be printed.
+
+.IP --random_seed={false|true|integer}
+Set a custom seed for the RNG of QDOS or auto-generate a random seed for it.
+
+.IP --simulation_enabled={true|false}
+Enable the simulation of the circuit provided as input.
+
+.IP --simulation_progres={0|1|2}
+Set the level of verbosity of the simulator.
+
+.IP --version
+Get the version of the installed software.
+
+The options above have default values shuch that a plain call to QDOS (i.e., qdos circ.q) is equivalent to:
+
+qdos --connection_enabled=true --dephasing_enabled=false --frequency_output=32 --in_dir="./input/" --measurement_error=0.0 --measure_memory=10 --n_shots=0 --out_dir="./output/" --out_rho_final=dec --out_rho_simulation=dec --out_schedule=dec --simulation_enabled=true --simulation_progres=2 circ.q
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Matteo Mezzadri (matteo.mezzadri4@studenti.unipr.it)
+
+.SH COPYRIGHT
+Copyright (C) Matteo Mezzadri 2022
